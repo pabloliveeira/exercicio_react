@@ -7,38 +7,37 @@ const Formulario = () => {
 
     const renderizaResultado = () => {
         const resultado = parseFloat(peso / (altura * altura)).toFixed(2)
-        const imc = resultado
 
-        if (resultado <= 18.5) {
+        if (resultado < 18.5) {
             return (
-                <p className={styles.resultado}>{resultado} Abaixo do normal</p>
+                <p className={styles.resultado}>{resultado} Abaixo do peso</p>
             )
         }
-        else if (resultado > 18.5 <= 24.9) {
+        else if (resultado >= 18.5 && resultado < 24.9) {
             return (
-                <p className={styles.resultado}>{resultado} Normal</p>
+                <p className={styles.resultado}>{resultado} Peso normal</p>
             )
         }
-        else if (resultado >= 24.9 <29.9) {
+        else if (resultado >= 24.9 && resultado < 29.9) {
             return (
-                <p className={styles.resultado}>{resultado} Sobrepeso </p>
+                <p className={styles.resultado}>{resultado} Sobrepeso</p>
             )
         }
-        else if (resultado >=29.9 <34.9 ) {
+        else if (resultado >=29.9 && resultado < 34.9 ) {
             return (
                 <p className={styles.resultado}>{resultado} Obesidade grau I</p>
             )
         }
-        else if (resultado >=35 <39.9 ) {
+        else if (resultado >=35 && resultado < 39.9 ) {
             return (
                 <p className={styles.resultado}>{resultado} Obesidade grau II</p>
             )
         }
-        else if (resultado > 40 ) {
+        else {
             return (
                 <p className={styles.resultado}>{resultado} Obesidade grau III</p>
             )
-        }              
+        }           
     }
 
     return (
